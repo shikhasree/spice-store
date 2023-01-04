@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.landing::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background: url("/static/img/favpng_spice-mix.png") no-repeat center;
+  height: 100vh;
+}
+.landing {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-box {
+  width: 50%;
+  height: auto;
+  background-color: rgba(255, 81, 68, 0.795);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(238, 238, 238);
+  padding: 12px;
+}
+.container-box a {
+  width: 100px;
+}
+a {
+  color: #00b7ff;
+}
+.products-container {
+  display: flex;
+  justify-content: flex-start;
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+  .products-container {
+    justify-content: center;
+  }
+}
+.product-card {
+  width: 300px;
+}
+/* .product-image {
+  max-width: 300px;
+  max-height: 300px;
+} */
+.blue-box {
+  background-color: rgba(255, 211, 68, 0.527);
+
+}

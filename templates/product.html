@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block head_title %}
+SpiceStore - {{object.title}}
+{% endblock %}
+{% block content %}
+<main class="mt-5 pt-4">
+  <div class="tile is-ancestor ">
+    <div class="tile is-vertical is-6">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child ">
+            <figure class="image product-image">
+              <img src="{{ object.image.url }}">
+            </figure>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child">
+          <div class="content">
+            <!-- Content -->
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification">
+        <div class="content">
+          <p class="title">{{object.title}}</p>
+          <p class="subtitle"> {% if object.discount_price %}
+            <span>
+              <s>Rs{{ object.price }}</s>
+            </span>
+            <span>Rs{{ object.discount_price }}</span>
+            {% else %}
+            <span>Rs{{ object.price }}</span>
+            {% endif %}</p>
+
+          {% comment %} <form class="">
+            <div class="field">
+              <div class="control">
+                <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              </div>
+              <div class="control">
+                <button class="button is-primary" type="submit">
+                  Add to cart
+                  <i class="fas fa-shopping-cart ml-1"></i>
+                </button>
+              </div>
+            </div>
+
+
+
+
+          </form> {% endcomment %}
+          <a href="{{ object.get_add_to_cart_url }}" class="button is-primary">
+            Add to cart
+            <i class="fas fa-shopping-cart ml-1"></i>
+          </a>
+          <a href="{{ object.get_remove_from_cart_url }}" class="button is-danger">
+            Remove from cart
+          </a>
+          <div class="content">
+            <p class="subtitle mt-6">Description</p>
+            <p>{{ object.description }}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</main>
+
+
+
+{% endblock content %}

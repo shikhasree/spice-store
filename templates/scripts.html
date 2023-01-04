@@ -1,0 +1,33 @@
+{% load static %}
+
+<script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script>
+  $(document).ready(function () {
+
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function () {
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+      const $notification = $delete.parentNode;
+
+      $delete.addEventListener('click', () => {
+        $notification.parentNode.removeChild($notification);
+      });
+    });
+  });
+  // var active_tab = '<%- active%>';
+  // if (active_tab === 'home') {
+  //     var element = document.getElementById("hometab");
+  //     element.classList.add("is-active");
+  // } else if (active_tab === 'about') {
+  //     var element = document.getElementById("abouttab");
+  //     element.classList.add("is-active");
+  // }
+</script>
